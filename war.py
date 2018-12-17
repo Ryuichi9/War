@@ -1,4 +1,6 @@
 
+from random import shuffle
+
 #Cardクラス
 
 class Card:
@@ -32,6 +34,20 @@ class Card:
         return False
 
     def __repr__(self):
-        v = self.values[self.value] + " of " + self.suits[self.suit]
+        v = self.suits[self.suit] + self.values[self.value] 
         return v
-        
+
+# Deckクラス
+
+class Deck:
+    def __init__(self):
+        self.cards = []
+        for i in range(2,15):
+            for j in range(4):
+                self.cards.append(Card(i,j))
+        shuffle(self.cards)
+    
+    def rm_card(self):
+        if len(self.cards) == 0:
+            return 
+        return self.cards.pop()
