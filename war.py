@@ -1,4 +1,6 @@
 
+from random import shuffle
+
 #Cardクラス
 
 class Card:
