@@ -60,3 +60,5 @@ class Player:
         self.card = None
         self.name = name
     
+
+#game
