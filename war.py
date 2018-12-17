@@ -1,10 +1,12 @@
 
+from random import shuffle
+
 #Cardクラス
 
 class Card:
-    suits = ["spades","hearts","diamonds","clubs"]
+    suits = ["♠","♥","♦","♣"]
 
-    values = [None,None,"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"]
+    values = [None,None,"2","3","4","5","6","7","8","9","10","J","Q","K","A"]
 
     def __init__(self,v,s):
         """スートも値も整数値です"""
@@ -32,6 +34,20 @@ class Card:
         return False
 
     def __repr__(self):
-        v = self.values[self.value] + " of " + self.suits[self.suit]
+        v = self.suits[self.suit] + self.values[self.value] 
         return v
-        
+
+# Deckクラス
+
+class Deck:
+    def __init__(self):
+        self.cards = []
+        for i in range(2,15):
+            for j in range(4):
+                self.cards.append(Card(i,j))
+        shuffle(self.cards)
+    
+    def rm_card(self):
+        if len(self.cards) == 0:
+            return 
+        return self.cards.pop()
