@@ -1,10 +1,12 @@
 
+from random import shuffle
+
 #Cardクラス
 
 class Card:
-    suits = ["spades","hearts","diamonds","clubs"]
+    suits = ["♠","♥","♦","♣"]
 
-    values = [None,None,"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"]
+    values = [None,None,"2","3","4","5","6","7","8","9","10","J","Q","K","A"]
 
     def __init__(self,v,s):
         """スートも値も整数値です"""
